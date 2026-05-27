@@ -24,8 +24,8 @@ services:
       dockerfile: Dockerfile
     container_name: prestasearch-frontend
     restart: unless-stopped
-    expose:
-      - "80"
+    ports:
+      - "3033:80"
     depends_on:
       backend:
         condition: service_started
@@ -34,5 +34,4 @@ services:
 
 networks:
   prestasearch:
-    external: true
-    name: prestasearch-net
+    driver: bridge
