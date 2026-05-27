@@ -1,5 +1,6 @@
 import base64
 import logging
+import time
 
 import numpy as np
 from google import genai
