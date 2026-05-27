@@ -6,7 +6,7 @@ from google.genai.errors import ClientError
 
 from embedding_service import EmbeddingService
 from models import Prestataire
-from vector_store import InMemoryVectorStore
+from vector_store import PGVectorStore
 
 logger = logging.getLogger(__name__)
 
@@ -202,10 +202,15 @@ SEED_PRESTATAIRES: list[Prestataire] = [
 
 
 async def load_seed_prestataires(
-    store: InMemoryVectorStore,
+    store: PGVectorStore,
     embed_svc: EmbeddingService,
     max_retries: int = 3,
 ) -> None:
+    existing = await store.count
+    if existing >= len(SEED_PRESTATAIRES):
+        logger.info("Seed already loaded (%d prestataires), skipping.", existing)
+        return
+
     start = time.time()
     total = len(SEED_PRESTATAIRES)
     logger.info("Loading %d seed providers...", total)
