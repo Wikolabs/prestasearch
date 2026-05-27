@@ -219,7 +219,7 @@ async def load_seed_prestataires(
         for attempt in range(max_retries):
             try:
                 embedding = embed_svc.embed_prestataire(prestataire)
-                store.add(prestataire, embedding)
+                await store.add(prestataire, embedding)
                 logger.info("[%d/%d] Loaded: %s (%s)", i + 1, total, prestataire.name, prestataire.specialty)
                 break
             except ClientError as e:
@@ -231,4 +231,5 @@ async def load_seed_prestataires(
                     raise
 
     elapsed = time.time() - start
-    logger.info("Seed loading complete: %d providers in %.1fs", store.count, elapsed)
+    final_count = await store.count
+    logger.info("Seed loading complete: %d providers in %.1fs", final_count, elapsed)
