@@ -23,7 +23,7 @@ export default function App() {
     <div className="h-screen flex flex-col bg-gray-50">
       <header className="bg-white border-b border-gray-100 px-6 py-3.5 flex items-center justify-between shrink-0 shadow-sm">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-amber-500 rounded-xl flex items-center justify-center shadow-sm">
+          <div className="w-9 h-9 bg-amber-600 rounded-xl flex items-center justify-center shadow-sm">
             <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
             </svg>
@@ -119,7 +119,7 @@ export default function App() {
                         </div>
                         <button
                           onClick={() => setEditingProvider(p)}
-                          className="self-start text-gray-300 hover:text-amber-500 transition-colors p-1"
+                          className="self-start text-gray-300 hover:text-amber-600 transition-colors p-1"
                           title="Edit"
                         >
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
