@@ -49,8 +49,6 @@ class PGVectorStore:
                     created_at  TEXT,
                     embedding   VECTOR({EMBEDDING_DIM})
                 );
-                CREATE INDEX IF NOT EXISTS idx_presta_emb
-                    ON prestataires USING hnsw (embedding vector_cosine_ops);
             """)
         logger.info("PGVectorStore schema ready.")
 
