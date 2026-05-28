@@ -21,24 +21,14 @@ export default function App() {
 
   return (
     <div className="h-screen flex flex-col bg-gray-50">
-      <header className="bg-white border-b border-gray-100 px-6 py-3.5 flex items-center justify-between shrink-0 shadow-sm">
-        <div className="flex items-center gap-3">
-          <div className="w-9 h-9 bg-amber-600 rounded-xl flex items-center justify-center shadow-sm">
-            <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-            </svg>
-          </div>
-          <div>
-            <h1 className="text-base font-bold text-gray-900 leading-none">PrestaSearch</h1>
-            <p className="text-xs text-gray-400 mt-0.5">AI-powered provider discovery</p>
-          </div>
-        </div>
+      <header className="bg-white border-b border-red-100 px-6 py-3 flex items-center justify-between shrink-0 shadow-sm">
+        <img src="/karohy-logo.png" alt="Karohy.mg" className="h-9 object-contain" />
         <nav className="flex gap-1 bg-gray-100 p-1 rounded-xl">
           <button
             onClick={() => setTab("search")}
             className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all ${
               tab === "search"
-                ? "bg-white text-amber-700 shadow-sm"
+                ? "bg-white text-red-700 shadow-sm"
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >
@@ -48,7 +38,7 @@ export default function App() {
             onClick={() => setTab("admin")}
             className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-all ${
               tab === "admin"
-                ? "bg-white text-amber-700 shadow-sm"
+                ? "bg-white text-red-700 shadow-sm"
                 : "text-gray-500 hover:text-gray-700"
             }`}
           >
@@ -89,7 +79,7 @@ export default function App() {
                       key={p.id}
                       className={`bg-white rounded-2xl shadow-sm border p-4 transition-all ${
                         editingProvider?.id === p.id
-                          ? "border-amber-400 ring-2 ring-amber-100"
+                          ? "border-red-500 ring-2 ring-red-100"
                           : "border-gray-100 hover:border-gray-200 hover:shadow"
                       }`}
                     >
@@ -101,15 +91,15 @@ export default function App() {
                             className="w-16 h-16 object-cover rounded-xl shrink-0"
                           />
                         ) : (
-                          <div className="w-16 h-16 bg-amber-50 rounded-xl flex items-center justify-center shrink-0">
-                            <svg className="w-7 h-7 text-amber-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
+                          <div className="w-16 h-16 bg-red-50 rounded-xl flex items-center justify-center shrink-0">
+                            <svg className="w-7 h-7 text-red-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                             </svg>
                           </div>
                         )}
                         <div className="min-w-0 flex-1">
                           <h3 className="font-medium text-gray-900 text-sm truncate">{p.name}</h3>
-                          <p className="text-amber-600 text-xs font-medium">{p.specialty}</p>
+                          <p className="text-red-600 text-xs font-medium">{p.specialty}</p>
                           <p className="text-gray-400 text-xs mt-0.5">
                             {p.city}{p.country ? `, ${p.country}` : ""}
                           </p>
@@ -119,7 +109,7 @@ export default function App() {
                         </div>
                         <button
                           onClick={() => setEditingProvider(p)}
-                          className="self-start text-gray-300 hover:text-amber-600 transition-colors p-1"
+                          className="self-start text-gray-300 hover:text-red-600 transition-colors p-1"
                           title="Edit"
                         >
                           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

@@ -21,7 +21,7 @@ const SUGGESTIONS = [
 
 function BotIcon() {
   return (
-    <div className="w-8 h-8 rounded-full bg-amber-600 flex items-center justify-center shrink-0 shadow-sm">
+    <div className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center shrink-0 shadow-sm">
       <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" />
       </svg>
@@ -35,9 +35,9 @@ function LoadingDots() {
       <BotIcon />
       <div className="bg-white border border-gray-100 rounded-2xl rounded-tl-sm px-4 py-3 shadow-sm">
         <div className="flex gap-1.5 items-center h-5">
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-bounce" style={{ animationDelay: "0ms" }} />
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-bounce" style={{ animationDelay: "150ms" }} />
-          <span className="w-2 h-2 rounded-full bg-amber-400 animate-bounce" style={{ animationDelay: "300ms" }} />
+          <span className="w-2 h-2 rounded-full bg-red-400 animate-bounce" style={{ animationDelay: "0ms" }} />
+          <span className="w-2 h-2 rounded-full bg-red-400 animate-bounce" style={{ animationDelay: "150ms" }} />
+          <span className="w-2 h-2 rounded-full bg-red-400 animate-bounce" style={{ animationDelay: "300ms" }} />
         </div>
       </div>
     </div>
@@ -140,12 +140,12 @@ export default function ChatInterface() {
       onDrop={handleDrop}
     >
       {dragOver && (
-        <div className="absolute inset-0 z-50 bg-amber-600/10 border-2 border-dashed border-amber-400 rounded-lg flex items-center justify-center pointer-events-none">
+        <div className="absolute inset-0 z-50 bg-red-600/10 border-2 border-dashed border-red-400 rounded-lg flex items-center justify-center pointer-events-none">
           <div className="bg-white px-8 py-5 rounded-2xl shadow-lg text-center">
-            <svg className="w-10 h-10 text-amber-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <svg className="w-10 h-10 text-red-400 mx-auto mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
             </svg>
-            <p className="text-amber-700 font-semibold">Drop your image here</p>
+            <p className="text-red-700 font-semibold">Drop your image here</p>
             <p className="text-gray-400 text-sm mt-1">We'll match providers to your visual</p>
           </div>
         </div>
@@ -154,8 +154,8 @@ export default function ChatInterface() {
       <div className="flex-1 overflow-y-auto px-4 py-6 space-y-6">
         {messages.length === 0 && (
           <div className="flex flex-col items-center justify-center h-full min-h-[300px] text-center px-4">
-            <div className="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center mb-4">
-              <svg className="w-8 h-8 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+            <div className="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center mb-4">
+              <svg className="w-8 h-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
             </div>
@@ -168,7 +168,7 @@ export default function ChatInterface() {
                 <button
                   key={s}
                   onClick={() => handleSend(s)}
-                  className="text-sm bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-full hover:border-amber-400 hover:text-amber-700 hover:bg-amber-50 transition-all shadow-sm"
+                  className="text-sm bg-white border border-gray-200 text-gray-600 px-4 py-2 rounded-full hover:border-red-400 hover:text-red-700 hover:bg-red-50 transition-all shadow-sm"
                 >
                   {s}
                 </button>
@@ -191,7 +191,7 @@ export default function ChatInterface() {
                     />
                   )}
                   {msg.content && (
-                    <div className="bg-amber-600 text-white rounded-2xl rounded-br-sm px-4 py-2.5 text-sm leading-relaxed">
+                    <div className="bg-red-600 text-white rounded-2xl rounded-br-sm px-4 py-2.5 text-sm leading-relaxed">
                       {msg.content}
                     </div>
                   )}
@@ -241,10 +241,10 @@ export default function ChatInterface() {
             <span className="text-xs text-gray-400">Image ready — add a description or send directly</span>
           </div>
         )}
-        <div className="flex gap-2 items-center bg-gray-50 border border-gray-200 rounded-2xl px-3 py-2 focus-within:border-amber-400 focus-within:ring-2 focus-within:ring-amber-100 transition-all">
+        <div className="flex gap-2 items-center bg-gray-50 border border-gray-200 rounded-2xl px-3 py-2 focus-within:border-red-400 focus-within:ring-2 focus-within:ring-amber-100 transition-all">
           <label
             className={`p-1.5 rounded-xl cursor-pointer transition-colors shrink-0 ${
-              imageBase64 ? "text-amber-600 bg-amber-100" : "text-gray-400 hover:text-amber-600 hover:bg-amber-50"
+              imageBase64 ? "text-red-600 bg-red-100" : "text-gray-400 hover:text-red-600 hover:bg-red-50"
             }`}
             title="Attach image"
           >
@@ -280,7 +280,7 @@ export default function ChatInterface() {
           <button
             onClick={() => handleSend()}
             disabled={loading || (!input.trim() && !imageBase64)}
-            className="bg-amber-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-amber-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors shrink-0 flex items-center gap-1.5"
+            className="bg-red-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-red-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors shrink-0 flex items-center gap-1.5"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.269 20.876L5.999 12zm0 0h7.5" />
